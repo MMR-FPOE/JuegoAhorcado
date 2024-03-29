@@ -7,12 +7,14 @@ import javafx.scene.control.TextField;
 public class WelcomeController {
 
     @FXML
-    private TextField nicknameTextField;
+    private TextField SWordTextField;
 
     /*
     @FXML
     void onHandleButtonPlay(ActionEvent event) throws IOException {
-        String nickname = nicknameTextField.getText();
+        String word = SWordTextField.getText();
+
+        Word secretWord = new Word(word);
 
         GameStage.getInstance().getGameController().setPlayer(player);
 

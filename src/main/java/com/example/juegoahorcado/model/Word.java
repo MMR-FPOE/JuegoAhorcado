@@ -31,4 +31,7 @@ public class Word {
     }
 
 
+    public int indexOf(char c) {
+        return word.indexOf(c);
+    }
 }

@@ -25,22 +25,38 @@ public class GameController {
 
     public void wordHelp(ActionEvent event){
 
+        int isReapetead = 0;
+
         gameWord.setText("_ ".repeat(word.getLength()));
+
         int randomIndex = (int) (Math.random() * word.getLength());
+
+        for (char x: wordArray){
+            if (x == wordArray[randomIndex] && x != guessedLetters[randomIndex]){
+                isReapetead++;
+            }
+        }
+        if (isReapetead == 1){
+            String charBonus = String.valueOf(wordArray[randomIndex]);
+            guessedLetters[randomIndex] = wordArray[randomIndex] ;
+            word.setOutputLabel(charBonus);
+        }else {
+            wordHelp(event);
+        }
+
 
     }
 
     @FXML
 
     public void wordGame(){
-        int cont = 0;
+
         String guessedLetter = letter.getText();
-       // String outputLabel = "";
+
         for (char c : wordArray){
             if ( c == guessedLetter.charAt(0)){
-                cont++;
                 word.setOutputLabel(c + " ");
-                guessedLetters[cont] = c;
+                guessedLetters[word.indexOf(c)] = c;
             }else{
                 word.setOutputLabel("_ ");
             }
