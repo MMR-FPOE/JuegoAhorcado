@@ -1,82 +1,70 @@
 package com.example.juegoahorcado.controller;
 
+import com.example.juegoahorcado.model.Image;
 import com.example.juegoahorcado.model.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 public class GameController {
 
-    private Word word = new Word("AHORCADO");
-
-    private char[] wordArray = word.getWord().toCharArray();
-
-    private char[] guessedLetters = new char[word.getLength()];
+    private Word word;
 
     @FXML
-
-    private Label gameWord;
-
+    private TextField fullWord;
+    @FXML
+    private Label gameWordLabel;
     @FXML
     private TextField letter;
+    @FXML
+    private VBox boxAhorcado;
+    private ImageView ahorcadoImage;
+    @FXML
+    private Label wrongLetters;
 
     @FXML
-
     public void wordHelp(ActionEvent event){
+        word.HelpClue();
+        gameWordLabel.setText(word.getOutputLabel());
 
-        int isReapetead = 0;
-
-        gameWord.setText("_ ".repeat(word.getLength()));
-
-        int randomIndex = (int) (Math.random() * word.getLength());
-
-        for (char x: wordArray){
-            if (x == wordArray[randomIndex] && x != guessedLetters[randomIndex]){
-                isReapetead++;
+    }
+    public void gameStart(Word inputWord){
+        word = inputWord;
+        gameWordLabel.setText(word.getOutputLabel());
+        createImage();
+    }
+    private void createImage(){
+        Image image = new Image();
+        ahorcadoImage = image.changeImage(word.lifesCounter());
+        boxAhorcado.getChildren().addAll(ahorcadoImage);
+    }
+    public void checkLetterInWord(){
+        String stringLetter = letter.getText();
+        if(!stringLetter.isEmpty()){
+            char guessedLetter = stringLetter.toUpperCase().charAt(0);
+            boolean wrong = word.checkLetterInWord(guessedLetter);
+            if (!wrong){
+                boxAhorcado.getChildren().remove(ahorcadoImage);
+                wrongLetters.setText(word.outputWrongLetters(guessedLetter));
+                createImage();
             }
+            gameWordLabel.setText(word.getOutputLabel());
+            letter.setText("");
         }
-        if (isReapetead == 1){
-            String charBonus = String.valueOf(wordArray[randomIndex]);
-            guessedLetters[randomIndex] = wordArray[randomIndex] ;
-            word.setOutputLabel(charBonus);
-        }else {
-            wordHelp(event);
-        }
-
-
     }
 
     @FXML
-
-    public void wordGame(){
-
-        String guessedLetter = letter.getText();
-
-        for (char c : wordArray){
-            if ( c == guessedLetter.charAt(0)){
-                word.setOutputLabel(c + " ");
-                guessedLetters[word.indexOf(c)] = c;
-            }else{
-                word.setOutputLabel("_ ");
-            }
-        }
-        gameWord.setText(word.getOutputLabel());
-
-    }
-
-    public void wordVictory(){
-        if (wordArray.length == word.getLength()){
-            System.out.println("victory");
+    public void updateLetter(){
+        String uniqueString = letter.getText();
+        if(uniqueString.isEmpty() || !Character.isLetter(uniqueString.charAt(0))){
+            letter.setText("");
+        }else{
+            char uniqueLetter = uniqueString.toUpperCase().charAt(0);
+            letter.setText(Character.toString(uniqueLetter));
         }
     }
-
-    public void onHandleButtonHelp(){
-
-    }
-
-
-
-
 
 }
