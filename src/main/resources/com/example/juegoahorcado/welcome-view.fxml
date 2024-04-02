@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.juegoahorcado.WelcomeView"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="16.0" style="-fx-background-color: #151922;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ahorcadogame.controller.WelcomeController">
+   <children>
+      <Label text="Ahorcado Game" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="44.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="32.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="messageLabel" text="Ingresa la palabra a adivinar" textFill="RED">
+         <font>
+            <Font name="SansSerif Italic" size="14.0" />
+         </font></Label>
+      <TextField fx:id="nicknameTextField" alignment="CENTER" prefHeight="26.0" prefWidth="148.0">
+         <font>
+            <Font name="SansSerif Regular" size="14.0" />
+         </font></TextField>
+      <Button mnemonicParsing="false" onAction="#onHandleCreateGame" style="-fx-background-color: red;" text="Jugar" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></Button>
+   </children>
+</VBox>
