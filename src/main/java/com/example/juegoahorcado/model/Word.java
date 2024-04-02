@@ -16,13 +16,14 @@ public class Word {
     private int clues = 0;
 
     public Word(String word){
-        this.word = word;
+        this.word = word.toUpperCase();
         this.length = word.length();
         this.wordArray = word.toUpperCase().toCharArray();
         this.wordGameArray = new char[length];
         this.outputLabel = "_ ".repeat(length);
     }
 
+    // check if the word entered contains only letters, returns a boolean value
     public Boolean checkWord(){
         for(char c: wordArray){
             if (!Character.isLetter(c)){
@@ -32,14 +33,17 @@ public class Word {
         return false;
     }
 
+    // return the word entered
     public String getWord(){
         return this.word;
     }
 
+    // return the length of the word
     public int getLength() {
         return length;
     }
 
+    // check if  the letter is in the word, if it is, stores it in the gameArray in the same position
     public boolean checkLetterInWord(char c){
         boolean booleanLetter = false;
         for(int i=0;i<this.length; i++){
@@ -51,6 +55,8 @@ public class Word {
         return booleanLetter;
     }
 
+    // return the String used for the game label,
+    // Scrolls through the game array to store the letters in the string and if it is a letter it saves it, otherwise it saves an underscore.
     public String getOutputLabel() {
         outputLabel = "";
         for(char c: wordGameArray){
@@ -63,6 +69,7 @@ public class Word {
         return outputLabel;
     }
 
+    // Creates the string for the wrong letters, if the letter is not already in the wrongletters array
     public String outputWrongLetters(char letter){
         boolean repeatLetter = true;
         for(char c: wrongLettersArray){
@@ -72,12 +79,14 @@ public class Word {
         }
         if(repeatLetter){
             wrongLetters += letter + " ";
+            // save the letter in the position according to the lives
             wrongLettersArray[6-lifes] = letter;
             lifes--;
         }
         return wrongLetters;
     }
 
+    // Provide a letter as a hint, the letter must appear only once in the word
     public void HelpClue() {
 
         int isReapetead = 0;
@@ -92,7 +101,6 @@ public class Word {
                 }
             }
             if (isReapetead == 1) {
-               // System.out.println(clues);
                 clues++;
                 wordGameArray[randomIndex] = wordArray[randomIndex];
                 char clue = wordArray[randomIndex];
@@ -106,7 +114,19 @@ public class Word {
         }
     }
 
+    // return the number of lives
     public int lifesCounter(){
         return lifes;
+    }
+
+
+    public boolean winGame(){
+
+        for(char c: wordGameArray){
+            if(!Character.isLetter(c)){
+                return false;
+            }
+        }
+        return true;
     }
 }

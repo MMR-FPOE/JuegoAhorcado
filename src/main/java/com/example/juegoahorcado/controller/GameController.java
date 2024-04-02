@@ -2,6 +2,8 @@ package com.example.juegoahorcado.controller;
 
 import com.example.juegoahorcado.model.Image;
 import com.example.juegoahorcado.model.Word;
+import com.example.juegoahorcado.view.WelcomeStage;
+import com.example.juegoahorcado.view.alert.AlertBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -14,8 +16,6 @@ public class GameController {
     private Word word;
 
     @FXML
-    private TextField fullWord;
-    @FXML
     private Label gameWordLabel;
     @FXML
     private TextField letter;
@@ -25,22 +25,30 @@ public class GameController {
     @FXML
     private Label wrongLetters;
 
+    // gets the hint and displays it in the label
     @FXML
     public void wordHelp(ActionEvent event){
         word.HelpClue();
         gameWordLabel.setText(word.getOutputLabel());
-
+        checkGameWin();
     }
+    // Get the word object and assigns it to the current
     public void gameStart(Word inputWord){
         word = inputWord;
         gameWordLabel.setText(word.getOutputLabel());
-        createImage();
+        createImage(word.lifesCounter());
     }
-    private void createImage(){
+    // Update the image
+    private void createImage(int lifes){
+        if(ahorcadoImage != null){
+            boxAhorcado.getChildren().remove(ahorcadoImage);
+        }
         Image image = new Image();
-        ahorcadoImage = image.changeImage(word.lifesCounter());
+        ahorcadoImage = image.changeImage(lifes);
         boxAhorcado.getChildren().addAll(ahorcadoImage);
     }
+
+    // verifies the letter, if is wrong or right, update the game
     public void checkLetterInWord(){
         String stringLetter = letter.getText();
         if(!stringLetter.isEmpty()){
@@ -49,13 +57,15 @@ public class GameController {
             if (!wrong){
                 boxAhorcado.getChildren().remove(ahorcadoImage);
                 wrongLetters.setText(word.outputWrongLetters(guessedLetter));
-                createImage();
+                createImage(word.lifesCounter());
             }
             gameWordLabel.setText(word.getOutputLabel());
             letter.setText("");
+            checkGameWin();
         }
     }
 
+    // updates the label, check if the letter is valid, converts it to uppercase
     @FXML
     public void updateLetter(){
         String uniqueString = letter.getText();
@@ -66,5 +76,16 @@ public class GameController {
             letter.setText(Character.toString(uniqueLetter));
         }
     }
+
+    //check if the player win or lose, displays an alert
+
+    private void checkGameWin(){
+        if(word.winGame()){
+            new AlertBox().WinOrLose("Ganaste", "El juego terminó", "¡Felicitades has completado la palabra secreta!");
+        } else if (word.lifesCounter() == 0) {
+            new AlertBox().WinOrLose("Perdiste", "El juego terminó", "Perdiste, la palabra era " + word.getWord());
+        }
+    }
+
 
 }

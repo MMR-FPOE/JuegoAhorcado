@@ -1,6 +1,7 @@
 package com.example.juegoahorcado;
 
 import com.example.juegoahorcado.controller.GameController;
+import com.example.juegoahorcado.view.WelcomeStage;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -14,6 +15,6 @@ public class Main extends Application  {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
+        WelcomeStage.getInstance();
     }
 }
