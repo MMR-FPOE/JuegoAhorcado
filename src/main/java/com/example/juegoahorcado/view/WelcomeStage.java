@@ -14,9 +14,7 @@ public class WelcomeStage extends Stage{
         Parent root = loader.load();
         Scene scene = new Scene(root);
         setTitle("Juego Ahorcado");
-        getIcons().add(
-                new Image(
-                        String.valueOf(getClass().getResource("/com/example/juegoahorcado/images/favicon.png"))));
+        getIcons().add(new Image(String.valueOf(getClass().getResource("/com/example/juegoahorcado/images/favicon.png"))));
         setResizable(false);
         setScene(scene);
         show();
@@ -32,5 +30,3 @@ public class WelcomeStage extends Stage{
     private static class WelcomeStageHolder{
         private static WelcomeStage INSTANCE;
     }
-
-}

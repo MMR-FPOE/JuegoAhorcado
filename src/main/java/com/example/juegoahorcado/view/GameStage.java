@@ -9,8 +9,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class GameStage extends Stage {
-
     private GameController gameController;
+  
     public GameStage() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/juegoahorcado/game-view.fxml"));
         Parent root = loader.load();
@@ -24,7 +24,6 @@ public class GameStage extends Stage {
         setScene(scene);
         show();
     }
-
     public GameController getGameController(){
         return gameController;
     }
