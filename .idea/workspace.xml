@@ -5,24 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd54fad2-8ed7-4fb8-9814-24bf749da0b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/controller/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/controller/WelcomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/GameStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/WelcomeStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/juegoahorcado/game-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/juegoahorcado/welcome-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/controller/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/model/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/model/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/model/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/GameStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/WelcomeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/WelcomeStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/alert/AlertBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/alert/AlertBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/alert/IAlertBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/juegoahorcado/view/alert/IAlertBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/juegoahorcado/game-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/juegoahorcado/game-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/juegoahorcado/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/juegoahorcado/images/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/juegoahorcado/welcome-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/juegoahorcado/welcome-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +30,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JavaFXApplication" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -47,9 +45,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2e6hfCAsaQ6izv5hlwKClKSf1x7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -58,22 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;macm&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Monica/IdeaProjects/AhorcadoProyect/JuegoAhorcado&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,6 +84,11 @@
       <option name="presentableId" value="Default" />
       <updated>1711231037975</updated>
       <workItem from="1711231039322" duration="336000" />
+      <workItem from="1711924671886" duration="1351000" />
+      <workItem from="1711926044873" duration="8984000" />
+      <workItem from="1711982202530" duration="12329000" />
+      <workItem from="1712022911493" duration="1227000" />
+      <workItem from="1712068107869" duration="11263000" />
     </task>
     <servers />
   </component>
