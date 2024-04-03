@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="16.0" style="-fx-background-color: #151922;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ahorcadogame.controller.WelcomeController">
+<VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="16.0" style="-fx-background-color: #151922;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.juegoahorcado.controller.WelcomeController">
    <children>
       <Label text="Ahorcado Game" textAlignment="CENTER" textFill="WHITE">
          <font>
@@ -25,7 +25,7 @@
          <font>
             <Font name="SansSerif Italic" size="14.0" />
          </font></Label>
-      <TextField fx:id="nicknameTextField" alignment="CENTER" prefHeight="26.0" prefWidth="148.0">
+      <TextField fx:id="secretWordTextField" alignment="CENTER" prefHeight="26.0" prefWidth="148.0">
          <font>
             <Font name="SansSerif Regular" size="14.0" />
          </font></TextField>

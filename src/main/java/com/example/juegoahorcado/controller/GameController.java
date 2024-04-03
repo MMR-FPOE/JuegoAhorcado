@@ -78,14 +78,12 @@ public class GameController {
     }
 
     //check if the player win or lose, displays an alert
-
     private void checkGameWin(){
         if(word.winGame()){
+            createImage(100);
             new AlertBox().WinOrLose("Ganaste", "El juego terminó", "¡Felicitades has completado la palabra secreta!");
         } else if (word.lifesCounter() == 0) {
             new AlertBox().WinOrLose("Perdiste", "El juego terminó", "Perdiste, la palabra era " + word.getWord());
         }
     }
-
-
 }
